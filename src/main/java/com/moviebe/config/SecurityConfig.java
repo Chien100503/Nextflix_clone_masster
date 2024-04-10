@@ -33,6 +33,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         req->req.requestMatchers("/api/v1/login/**","/api/v1/register/**")
                                 .permitAll()
+                                .requestMatchers("/api/film/**")
+                                .permitAll()
                                 .requestMatchers("/admin/**")
                                 .hasAuthority("ADMIN")
                                 .anyRequest()
